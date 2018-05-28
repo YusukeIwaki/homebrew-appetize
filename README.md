@@ -1,4 +1,4 @@
-# Homebrew repository for *Unofficial* `appetize` command line tool
+# Homebrew repository for `appetize`
 
 ```
 brew tap YusukeIwaki/appetize
@@ -7,7 +7,9 @@ brew install appetize
 
 Enjoy!
 
----
+# References
 
-* Detailed instruction can be found [here](https://github.com/YusukeIwaki/appetize-cli).
-* API token is also required. See [appetize.io](https://appetize.io/docs#request-api-token) docs for detail.
+* [YusukeIwaki/appetize-cli](https://github.com/YusukeIwaki/appetize-cli) -- for detailed instructions of `appetize` command.
+* [appetize.io](https://appetize.io/docs#request-api-token) -- for API token, API specifications.
+
+NOTE: `appetize` cli tool is not official one for appetize.io. Use it just for hobby use :)
