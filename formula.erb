@@ -1,0 +1,14 @@
+require "formula"
+
+class Appetize < Formula
+  homepage "https://github.com/YusukeIwaki/appetize-cli"
+  url "https://github.com/YusukeIwaki/appetize-cli/releases/download/<%= git_tag %>/appetize_darwin_amd64"
+  sha256 "<%= sha256 %>"
+  head "https://github.com/YusukeIwaki/appetize-cli.git"
+  version "<%= git_tag %>"
+
+  def install
+    mv "appetize_darwin_amd64", "appetize"
+    bin.install "appetize"
+  end
+end
