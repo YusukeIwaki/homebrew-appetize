@@ -19,7 +19,7 @@ jobs:
           command: git diff
       - run:
           name: git commit
-          command: git commit -a -m 'update appetize.rb from https://github.com/YusukeIwaki/appetize-cli/releases/latest'
+          command: echo $GITCONFIG_BASE64 | base64 -d > ~/.gitconfig ; git commit -a -m 'update appetize.rb from https://github.com/YusukeIwaki/appetize-cli/releases/latest'
       - run:
           name: git push
           command: git push origin HEAD:release/$(date '+%Y-%m-%d-%H%M')
