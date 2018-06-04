@@ -17,6 +17,7 @@ jobs:
       - run:
           name: git diff
           command: git diff
+      - run: date '+%Y-%m-%d-%H%M' > hoge ; git add hoge 
       - run:
           name: git commit
           command: echo $GITCONFIG_BASE64 | base64 -d > ~/.gitconfig ; git commit -a -m 'update appetize.rb from https://github.com/YusukeIwaki/appetize-cli/releases/latest'
