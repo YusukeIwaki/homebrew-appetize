@@ -1,0 +1,25 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/ruby
+    steps:
+      - checkout
+      - run: echo "Nothing to do!"
+  build_pr:
+    docker:
+      - image: circleci/ruby
+    steps:
+      - checkout
+      - run:
+          name: update Formula
+          command: ruby print_formula_from_latest.rb > appetize.rb  
+      - run:
+          name: git diff
+          command: git diff
+      - run:
+          name: git commit
+          command: echo $GITCONFIG_BASE64 | base64 -d > ~/.gitconfig ; git commit -a -m 'update appetize.rb from https://github.com/YusukeIwaki/appetize-cli/releases/latest'
+      - run:
+          name: git push
+          command: git push origin HEAD:release/$(date '+%Y-%m-%d-%H%M')
