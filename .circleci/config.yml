@@ -1,5 +1,11 @@
 version: 2
 jobs:
+  build:
+    docker:
+      - image: circleci/ruby
+    steps:
+      - checkout
+      - run: echo "Nothing to do!"
   build_pr:
     docker:
       - image: circleci/ruby
